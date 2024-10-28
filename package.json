@@ -13,6 +13,7 @@
     "@types/cors": "^2.8.17",
     "@types/hpp": "^0.2.6",
     "@types/morgan": "^1.9.9",
+    "baitaplon-2004": "file:",
     "bcryptjs": "^2.4.3",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.1",
