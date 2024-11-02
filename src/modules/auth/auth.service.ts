@@ -14,8 +14,14 @@ class AuthService {
     public userSchema = UserSchema;
 
     public async login(model: LoginDto): Promise<TokenData> {
-        if (isEmptyObject(model)) {
-            throw new HttpException(400, 'Model is empty');
+        if (isEmptyObject(model.email) && isEmptyObject(model.password)) {
+            throw new HttpException(400, 'Email and Password is empty');
+        }
+        if (isEmptyObject(model.email)) {
+            throw new HttpException(400, 'Email is empty');
+        }
+        if (isEmptyObject(model.password)) {
+            throw new HttpException(400, 'Password is empty');
         }
         const user = await this.userSchema.findOne({ email: model.email });
         if (!user) { throw new HttpException(409, 'Your email address is not exists'); }

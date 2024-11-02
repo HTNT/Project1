@@ -9,7 +9,7 @@ export default class RegisterDto {
     public last_name: string;
     @IsNotEmpty() @IsEmail()
     public email: string;
-    @IsNotEmpty() @MinLength(6, { 'message': 'Password is short!' })
+    @IsNotEmpty() @MinLength(8, { 'message': 'Password is short!' })
     public password: string;
 
     constructor(first_name: string, last_name: string, email: string, password: string) {
